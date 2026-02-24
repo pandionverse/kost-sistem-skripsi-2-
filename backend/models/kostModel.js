@@ -49,7 +49,7 @@ class Kost {
     }
 
     static async updateRoomAvailability(id, isAvailable) {
-        await db.execute('UPDATE kost SET room_available = ?, last_room_update = NOW() WHERE id = ?', [isAvailable, id]);
+        await db.execute('UPDATE kost SET room_available = ?, last_room_update = CURRENT_TIMESTAMP WHERE id = ?', [isAvailable ? 1 : 0, id]);
     }
 
     static async getImages(kostId) {

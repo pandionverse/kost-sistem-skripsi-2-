@@ -1,4 +1,5 @@
 const { Kost, Logbook } = require('../models/kostModel');
+const db = require('../config/db');
 
 exports.createKost = async (req, res) => {
     try {
