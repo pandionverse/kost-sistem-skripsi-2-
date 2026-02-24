@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import api from '../api/axios';
+import api, { FILE_BASE } from '../api/axios';
 import { CheckCircle, XCircle, Loader, MapPin, Search } from 'lucide-react';
 
 const AdminDashboard = () => {
@@ -70,7 +70,7 @@ const AdminDashboard = () => {
                                 {/* Image */}
                                 <div className="w-full md:w-48 h-32 bg-gray-200 rounded-xl overflow-hidden flex-shrink-0">
                                     {kost.image_url ? (
-                                        <img src={`http://localhost:5000${kost.image_url}`} alt={kost.name} className="w-full h-full object-cover" />
+                                        <img src={`${FILE_BASE}${kost.image_url}`} alt={kost.name} className="w-full h-full object-cover" />
                                     ) : (
                                         <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">No Image</div>
                                     )}

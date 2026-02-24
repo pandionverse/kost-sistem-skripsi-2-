@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import api from '../api/axios';
+import api, { FILE_BASE } from '../api/axios';
 import { MapPin, Phone, ArrowLeft, CheckCircle, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const KostDetail = () => {
@@ -83,7 +83,7 @@ const KostDetail = () => {
                             {kost.images && kost.images.length > 0 ? (
                                 <>
                                     <img
-                                        src={`http://localhost:5000${kost.images[currentImageIndex]}`}
+                                        src={`${FILE_BASE}${kost.images[currentImageIndex]}`}
                                         alt={`${kost.name} - View ${currentImageIndex + 1}`}
                                         className="w-full h-full object-cover transition-opacity duration-500"
                                     />

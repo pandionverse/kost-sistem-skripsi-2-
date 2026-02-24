@@ -1,4 +1,5 @@
 import React from 'react';
+import { FILE_BASE } from '../api/axios';
 import { Link } from 'react-router-dom';
 import { MapPin } from 'lucide-react';
 
@@ -9,7 +10,7 @@ const KostCard = ({ kost }) => {
             <div className="relative h-48 bg-gray-200">
                 {kost.image_url ? (
                     <img
-                        src={`http://localhost:5000${kost.image_url}`}
+                        src={`${FILE_BASE}${kost.image_url}`}
                         alt={kost.name}
                         className="w-full h-full object-cover"
                     />

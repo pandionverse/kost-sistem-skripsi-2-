@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import api from '../api/axios';
+import api, { FILE_BASE } from '../api/axios';
 import { Plus, Edit, Trash2, MapPin, Loader } from 'lucide-react';
 
 const OwnerDashboard = () => {
@@ -58,7 +58,7 @@ const OwnerDashboard = () => {
                                     {kost.status}
                                 </div>
                                 {kost.image_url ? (
-                                    <img src={`http://localhost:5000${kost.image_url}`} alt={kost.name} className="w-full h-full object-cover" />
+                                    <img src={`${FILE_BASE}${kost.image_url}`} alt={kost.name} className="w-full h-full object-cover" />
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center text-gray-400">No Image</div>
                                 )}
